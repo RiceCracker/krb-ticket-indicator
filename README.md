@@ -130,6 +130,7 @@ krb-ticket-indicator/
 ├── share/krb-ticket-indicator.desktop.in # autostart template (__EXEC__)
 ├── share/krb-ticket-indicator.conf       # default config (installed if absent)
 ├── Makefile                              # install / uninstall / status …
+├── LICENSE                               # GNU GPL v3
 └── README.md
 ```
 
@@ -177,3 +178,8 @@ ends (even on crash/SIGKILL), so there is no stale lock file.
 `make` only stops real python interpreters (`ps comm == python*`), so it
 never hits a shell — even if its command line contains the script name as
 text (otherwise `pkill -f` would kill itself).
+
+## License
+
+GNU General Public License v3.0 — see [LICENSE](LICENSE). Forks and
+derivatives must stay open under the same license.
