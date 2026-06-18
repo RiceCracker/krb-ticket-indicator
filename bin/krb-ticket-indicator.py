@@ -291,6 +291,7 @@ class KrbIndicator:
 
         self._flip = False
         self._auto_renew_expiry = None  # guard: auto-renew once per expiry
+        self._warned_expiry = None      # guard: warn once per expiry
         self.refresh()
         # Refresh once more right after startup, when the indicator is
         # registered with the panel, so label/icon are correct immediately
@@ -618,6 +619,12 @@ class KrbIndicator:
 
         self.item_renew.set_visible(renewable_now)
         self.item_destroy.set_visible(state != "none")
+
+        # Warn once per expiry when the ticket drops below the threshold.
+        if state == "soon" and st["expires"] != self._warned_expiry:
+            self._warned_expiry = st["expires"]
+            self._notify("Kerberos ticket expiring soon",
+                         "Remaining: " + fmt_hms(st["remaining"]))
 
         self._maybe_auto_renew(cfg, st)
         return False

@@ -104,7 +104,7 @@ renew_lifetime  = 7d      # kinit -r; must be >= ticket lifetime
 renewable       = true    # request renewable by default
 
 # Panel
-warn_minutes    = 30      # below this: warning icon (and auto-renew trigger)
+warn_minutes    = 30      # below this: warning icon + notification (+ auto-renew)
 show_principal  = true    # show ticket name next to the icon
 show_time       = true    # show remaining time next to the icon
 
