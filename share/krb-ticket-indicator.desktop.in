@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Kerberos Ticket Indicator
+Comment=Shows status and remaining lifetime of the Kerberos TGT in the panel
+Exec=__EXEC__
+Icon=dialog-password-symbolic
+Terminal=false
+Categories=Utility;
+X-GNOME-Autostart-enabled=true
